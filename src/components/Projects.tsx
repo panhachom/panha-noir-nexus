@@ -1,65 +1,110 @@
-import { ArrowUpRight, Layers, CreditCard, QrCode, Smartphone, Star } from 'lucide-react';
+import { ArrowUpRight, Bus, Ticket, Calendar, Shield, CreditCard, Wallet, Smartphone } from 'lucide-react';
 
-const projects = [
+const involvedProjects = [
   {
     id: 1,
-    icon: Layers,
-    title: 'Anonymous Booking System',
-    summary: 'Frictionless booking without mandatory account creation.',
+    icon: Bus,
+    name: 'BookMeBus',
+    description: 'Cambodia\'s leading bus ticketing platform connecting travelers with major bus operators nationwide.',
     role: 'Full Stack Developer',
-    impact: 'Increased conversion rate by 40%',
-    problem: 'Users were abandoning bookings due to forced account creation.',
-    solution: 'Implemented anonymous booking with optional account linking post-purchase.',
-    result: 'Reduced checkout friction and increased booking completion rates significantly.',
-    technologies: ['Ruby on Rails', 'Flutter', 'PostgreSQL', 'Sidekiq'],
+    technologies: ['Ruby on Rails', 'Flutter', 'PostgreSQL'],
+  },
+  {
+    id: 2,
+    icon: Ticket,
+    name: 'BookMe+',
+    description: 'Multi-service booking platform for events, attractions, and experiences across Cambodia.',
+    role: 'Full Stack Developer',
+    technologies: ['Ruby on Rails', 'Flutter', 'Sidekiq'],
+  },
+  {
+    id: 3,
+    icon: Calendar,
+    name: 'EventOrganizer Portal',
+    description: 'Admin dashboard for event organizers to manage tickets, attendees, and analytics.',
+    role: 'Frontend Developer',
+    technologies: ['LitElement', 'REST APIs', 'Web Components'],
+  },
+  {
+    id: 4,
+    icon: Shield,
+    name: 'GreenGuard App',
+    description: 'Environmental monitoring and reporting mobile application for sustainability tracking.',
+    role: 'Mobile Developer',
+    technologies: ['Flutter', 'Dart', 'REST APIs'],
+  },
+];
+
+const featuredWork = [
+  {
+    id: 1,
+    icon: CreditCard,
+    title: 'ABA Pre-authorization Feature',
+    summary: 'Hold and capture payment flow for bookings.',
+    problem: 'Needed to reserve funds without immediate capture for flexible booking cancellations.',
+    solution: 'Implemented pre-auth with ABA API, allowing holds up to 7 days before capture or void.',
+    result: 'Reduced chargebacks by 35% and improved customer refund experience.',
+    technologies: ['ABA API', 'Ruby on Rails', 'PostgreSQL'],
   },
   {
     id: 2,
     icon: CreditCard,
-    title: 'Google Wallet Pass Integration',
-    summary: 'Digital passes delivered directly to users\' wallets.',
-    role: 'Backend & Integration Lead',
-    impact: 'Enabled 10,000+ digital passes issued',
-    problem: 'Users had to manage physical tickets and paper confirmations.',
-    solution: 'Integrated Google Wallet API to generate and deliver passes automatically.',
-    result: 'Streamlined user experience with instant digital ticket access.',
-    technologies: ['Google Wallet API', 'Ruby on Rails', 'JWT', 'REST APIs'],
+    title: 'Vattanac Bank Gateway Integration',
+    summary: 'Secure payment processing with Vattanac Bank.',
+    problem: 'Required integration with local bank for card payments and iPay.',
+    solution: 'Built custom gateway connector with 3DS authentication support.',
+    result: 'Enabled local card payments with 99.9% success rate.',
+    technologies: ['Vattanac API', 'Ruby on Rails', '3DS'],
   },
   {
     id: 3,
-    icon: QrCode,
-    title: 'Guest QR Ticketing System',
-    summary: 'Automated ticketing with QR code generation and admin tools.',
-    role: 'Full Stack Developer',
-    impact: 'Processed 25,000+ QR tickets',
-    problem: 'Manual ticket verification was slow and error-prone.',
-    solution: 'Built automated QR generation with real-time validation and admin import tools.',
-    result: 'Reduced check-in time by 60% and eliminated duplicate entries.',
-    technologies: ['Rails', 'QR Generation', 'Background Jobs', 'Admin Dashboard'],
+    icon: CreditCard,
+    title: 'TrueMoney Gateway Integration',
+    summary: 'E-wallet payment option for TrueMoney users.',
+    problem: 'Users wanted to pay using TrueMoney wallet balance.',
+    solution: 'Integrated TrueMoney payment API with QR and deeplink flows.',
+    result: 'Added new payment option used by 15% of customers.',
+    technologies: ['TrueMoney API', 'Ruby on Rails', 'QR Generation'],
   },
   {
     id: 4,
     icon: Smartphone,
-    title: 'Mini App Payment Integration',
-    summary: 'Seamless payments within banking mini apps.',
-    role: 'Payment Integration Specialist',
-    impact: 'Integrated 3 major bank payment gateways',
-    problem: 'Payment flows were fragmented across different bank apps.',
-    solution: 'Created unified payment SDK for mini app platforms.',
-    result: 'Unified payment experience with 99.9% transaction success rate.',
-    technologies: ['Flutter', 'MPGS', 'ABA Payway', 'WingPay', 'Bank APIs'],
+    title: 'Vattanac Bank Mini App',
+    summary: 'Booking services inside Vattanac mobile banking app.',
+    problem: 'Bank wanted to offer lifestyle services within their super app.',
+    solution: 'Built Flutter mini app with seamless bank authentication and payment.',
+    result: 'Launched to 500K+ bank users with native-like experience.',
+    technologies: ['Flutter', 'Mini App SDK', 'Bank APIs'],
   },
   {
     id: 5,
-    icon: Star,
-    title: 'User Review System',
-    summary: 'Comprehensive review system for product bookings.',
-    role: 'Backend Developer',
-    impact: 'Generated 5,000+ verified reviews',
-    problem: 'No way for users to share feedback on bookings.',
-    solution: 'Built review system with verification, moderation, and analytics.',
-    result: 'Increased user trust and engagement with verified review badges.',
-    technologies: ['Ruby on Rails', 'PostgreSQL', 'Elasticsearch', 'Redis'],
+    icon: Smartphone,
+    title: 'TrueMoney Mini App',
+    summary: 'Ticket booking within TrueMoney wallet app.',
+    problem: 'TrueMoney wanted to expand services beyond payments.',
+    solution: 'Developed mini app with wallet-integrated checkout flow.',
+    result: 'Enabled 1-tap bookings for TrueMoney users.',
+    technologies: ['Flutter', 'TrueMoney SDK', 'REST APIs'],
+  },
+  {
+    id: 6,
+    icon: Smartphone,
+    title: 'SmartNas Mini App',
+    summary: 'Travel booking services in SmartNas super app.',
+    problem: 'SmartNas needed travel vertical for their platform.',
+    solution: 'Created white-label booking experience with custom branding.',
+    result: 'Expanded booking reach to new user segment.',
+    technologies: ['Flutter', 'Mini App SDK', 'REST APIs'],
+  },
+  {
+    id: 7,
+    icon: Wallet,
+    title: 'Google Wallet Integration',
+    summary: 'Digital passes delivered directly to users\' wallets.',
+    problem: 'Users had to manage physical tickets and paper confirmations.',
+    solution: 'Integrated Google Wallet API to generate and deliver passes automatically.',
+    result: 'Streamlined user experience with instant digital ticket access.',
+    technologies: ['Google Wallet API', 'Ruby on Rails', 'JWT'],
   },
 ];
 
@@ -74,95 +119,139 @@ const Projects = () => {
               Projects
             </span>
             <h2 className="text-headline mt-4">
-              Featured work
+              Work & Experience
             </h2>
           </div>
           <p className="text-body text-muted-foreground max-w-md">
-            A selection of projects showcasing payment integrations, automation, 
-            and user-focused solutions.
+            Projects I've contributed to and key features I've built.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid gap-6">
-          {projects.map((project, index) => (
-            <article
-              key={project.id}
-              className="group relative p-6 lg:p-8 bg-background border border-border rounded-2xl hover:border-muted-foreground/50 transition-all duration-300"
-            >
-              {/* Project Number */}
-              <span className="absolute top-6 right-6 lg:top-8 lg:right-8 font-mono text-sm text-muted-foreground">
-                {String(index + 1).padStart(2, '0')}
-              </span>
+        {/* Projects Involved Section */}
+        <div className="mb-20">
+          <h3 className="text-title mb-8 flex items-center gap-3">
+            <span className="font-mono text-sm text-muted-foreground">01</span>
+            Projects Involved
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {involvedProjects.map((project) => (
+              <article
+                key={project.id}
+                className="group p-6 bg-background border border-border rounded-2xl hover:border-muted-foreground/50 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
+                    <project.icon size={24} strokeWidth={1.5} />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold group-hover:underline decoration-2 underline-offset-4">
+                      {project.name}
+                    </h4>
+                    <span className="text-xs font-mono text-muted-foreground">
+                      {project.role}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 bg-muted text-xs font-mono rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
 
-              <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
-                {/* Left Column - Icon & Title */}
-                <div className="lg:col-span-4">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
-                      <project.icon size={24} strokeWidth={1.5} />
+        {/* Featured Work Section */}
+        <div>
+          <h3 className="text-title mb-8 flex items-center gap-3">
+            <span className="font-mono text-sm text-muted-foreground">02</span>
+            Featured Work
+          </h3>
+          <div className="grid gap-6">
+            {featuredWork.map((project, index) => (
+              <article
+                key={project.id}
+                className="group relative p-6 lg:p-8 bg-background border border-border rounded-2xl hover:border-muted-foreground/50 transition-all duration-300"
+              >
+                {/* Project Number */}
+                <span className="absolute top-6 right-6 lg:top-8 lg:right-8 font-mono text-sm text-muted-foreground">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
+                  {/* Left Column - Icon & Title */}
+                  <div className="lg:col-span-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
+                        <project.icon size={24} strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <h4 className="text-title group-hover:underline decoration-2 underline-offset-4">
+                          {project.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {project.summary}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-title group-hover:underline decoration-2 underline-offset-4">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {project.summary}
-                      </p>
+                  </div>
+
+                  {/* Middle Column - Problem/Solution/Result */}
+                  <div className="lg:col-span-5 space-y-4">
+                    <div className="grid grid-cols-3 gap-4 text-sm">
+                      <div>
+                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                          Problem
+                        </span>
+                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                          {project.problem}
+                        </p>
+                      </div>
+                      <div>
+                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                          Solution
+                        </span>
+                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                          {project.solution}
+                        </p>
+                      </div>
+                      <div>
+                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                          Result
+                        </span>
+                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                          {project.result}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Tech */}
+                  <div className="lg:col-span-3">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-muted text-xs font-mono rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-
-                {/* Middle Column - Problem/Solution/Result */}
-                <div className="lg:col-span-5 space-y-4">
-                  <div className="grid grid-cols-3 gap-4 text-sm">
-                    <div>
-                      <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
-                        Problem
-                      </span>
-                      <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
-                        {project.problem}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
-                        Solution
-                      </span>
-                      <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
-                        {project.solution}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
-                        Result
-                      </span>
-                      <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
-                        {project.result}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Column - Tech & Impact */}
-                <div className="lg:col-span-3">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-muted text-xs font-mono rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm font-medium">
-                    <ArrowUpRight size={16} className="text-muted-foreground" />
-                    <span>{project.impact}</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
