@@ -11,10 +11,6 @@ const skillCategories = [
     title: 'Mobile & Frontend',
     skills: ['Flutter', 'Dart', 'LitElement', 'Web Components', 'Responsive Design', 'PWA'],
   },
-  {
-    title: 'DevOps & Tools',
-    skills: ['AWS', 'Heroku', 'Docker', 'CI/CD', 'Postman', 'Git'],
-  },
 ];
 
 const Skills = () => {
@@ -35,8 +31,8 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skills Grid - Mobile: Single column, Desktop: 2x2 grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {/* Skills Grid - Mobile: Single column, Desktop: 3 column grid */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
@@ -70,7 +66,7 @@ const Skills = () => {
           <div className="flex animate-marquee whitespace-nowrap">
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex items-center gap-8 mx-8">
-                {['Flutter', 'Ruby on Rails', 'AWS', 'Docker', 'PostgreSQL', 'REST APIs', 'Payment Gateways', 'LitElement'].map((tech) => (
+                {['Flutter', 'Ruby on Rails', 'PostgreSQL', 'REST APIs', 'Payment Gateways', 'LitElement'].map((tech) => (
                   <span
                     key={tech}
                     className="text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground/20 tracking-tight"

@@ -86,7 +86,7 @@ const About = () => {
 
           {/* Right Column - Highlights */}
           <div className="space-y-6">
-            {highlights.map((item, index) => (
+            {highlights.map((item) => (
               <div
                 key={item.title}
                 className="group p-6 border border-border rounded-2xl hover:border-muted-foreground/50 transition-colors"
@@ -102,25 +102,6 @@ const About = () => {
                 </div>
               </div>
             ))}
-
-            {/* Additional Info Card */}
-            <div className="p-6 bg-foreground text-background rounded-2xl">
-              <h3 className="font-semibold mb-2">Current Focus</h3>
-              <p className="text-sm opacity-80 mb-4">
-                Building mini app payment solutions and Google Wallet integrations 
-                for enhanced user experiences.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Flutter', 'Rails', 'AWS', 'Docker'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-background/10 text-xs font-mono rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
