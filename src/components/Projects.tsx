@@ -1,4 +1,5 @@
-import { ArrowUpRight, Bus, Ticket, Calendar, Shield, CreditCard, Wallet, Smartphone } from 'lucide-react';
+import { Bus, Ticket, Calendar, Shield, CreditCard, Wallet, Smartphone, ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const involvedProjects = [
   {
@@ -39,7 +40,7 @@ const featuredWork = [
   {
     id: 1,
     icon: CreditCard,
-    title: 'ABA Pre-authorization Feature',
+    title: 'ABA Pre-authorization',
     summary: 'Hold and capture payment flow for bookings.',
     problem: 'Needed to reserve funds without immediate capture for flexible booking cancellations.',
     solution: 'Implemented pre-auth with ABA API, allowing holds up to 7 days before capture or void.',
@@ -49,7 +50,7 @@ const featuredWork = [
   {
     id: 2,
     icon: CreditCard,
-    title: 'Vattanac Bank Gateway Integration',
+    title: 'Vattanac Bank Gateway',
     summary: 'Secure payment processing with Vattanac Bank.',
     problem: 'Required integration with local bank for card payments and iPay.',
     solution: 'Built custom gateway connector with 3DS authentication support.',
@@ -59,7 +60,7 @@ const featuredWork = [
   {
     id: 3,
     icon: CreditCard,
-    title: 'TrueMoney Gateway Integration',
+    title: 'TrueMoney Gateway',
     summary: 'E-wallet payment option for TrueMoney users.',
     problem: 'Users wanted to pay using TrueMoney wallet balance.',
     solution: 'Integrated TrueMoney payment API with QR and deeplink flows.',
@@ -110,138 +111,143 @@ const featuredWork = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 md:py-32 border-t border-border">
+    <section id="projects" className="py-28 md:py-36 bg-muted/20">
       <div className="section-container">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-          <div>
-            <span className="font-mono text-sm text-muted-foreground tracking-wider uppercase">
+        <ScrollReveal>
+          <div className="max-w-2xl mb-20">
+            <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">
               Projects
             </span>
-            <h2 className="text-headline mt-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4 mb-6">
               Work & Experience
             </h2>
+            <p className="text-muted-foreground text-lg">
+              Projects I've contributed to and key features I've built.
+            </p>
           </div>
-          <p className="text-body text-muted-foreground max-w-md">
-            Projects I've contributed to and key features I've built.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Projects Involved Section */}
-        <div className="mb-20">
-          <h3 className="text-title mb-8 flex items-center gap-3">
-            <span className="font-mono text-sm text-muted-foreground">01</span>
-            Projects Involved
-          </h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {involvedProjects.map((project) => (
-              <article
-                key={project.id}
-                className="group p-6 bg-background border border-border rounded-2xl hover:border-muted-foreground/50 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
-                    <project.icon size={24} strokeWidth={1.5} />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold group-hover:underline decoration-2 underline-offset-4">
-                      {project.name}
-                    </h4>
-                    <span className="text-xs font-mono text-muted-foreground">
-                      {project.role}
-                    </span>
+        <div className="mb-24">
+          <ScrollReveal>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs text-muted-foreground">01</span>
+              <h3 className="text-xl font-semibold">Projects Involved</h3>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+          </ScrollReveal>
+          
+          {/* Minimal grid layout */}
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            {involvedProjects.map((project, index) => (
+              <ScrollReveal key={project.id} delay={index * 100}>
+                <div className="group py-6 border-b border-border/50 hover:border-foreground/20 transition-colors duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="p-2.5 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300 mt-0.5">
+                      <project.icon size={20} strokeWidth={1.5} />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h4 className="text-lg font-semibold mb-1 group-hover:text-muted-foreground transition-colors">
+                            {project.name}
+                          </h4>
+                          <span className="text-xs font-mono text-muted-foreground">
+                            {project.role}
+                          </span>
+                        </div>
+                        <ArrowRight size={16} className="text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 mt-1" />
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs font-mono text-muted-foreground/80"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-muted text-xs font-mono rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
         </div>
 
         {/* Featured Work Section */}
         <div>
-          <h3 className="text-title mb-8 flex items-center gap-3">
-            <span className="font-mono text-sm text-muted-foreground">02</span>
-            Featured Work
-          </h3>
-          <div className="grid gap-6">
+          <ScrollReveal>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs text-muted-foreground">02</span>
+              <h3 className="text-xl font-semibold">Featured Work</h3>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+          </ScrollReveal>
+          
+          {/* Clean list layout */}
+          <div className="space-y-6">
             {featuredWork.map((project, index) => (
-              <article
-                key={project.id}
-                className="group relative p-6 lg:p-8 bg-background border border-border rounded-2xl hover:border-muted-foreground/50 transition-all duration-300"
-              >
-                {/* Project Number */}
-                <span className="absolute top-6 right-6 lg:top-8 lg:right-8 font-mono text-sm text-muted-foreground">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
+              <ScrollReveal key={project.id} delay={index * 75}>
+                <div className="group relative py-8 px-6 md:px-8 bg-background border border-border/50 rounded-xl hover:border-border hover:shadow-soft transition-all duration-300">
+                  {/* Number */}
+                  <span className="absolute top-6 right-6 font-mono text-xs text-muted-foreground/50">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
 
-                <div className="grid lg:grid-cols-12 gap-6 lg:gap-8">
-                  {/* Left Column - Icon & Title */}
-                  <div className="lg:col-span-4">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground group-hover:text-background transition-colors">
-                        <project.icon size={24} strokeWidth={1.5} />
-                      </div>
-                      <div>
-                        <h4 className="text-title group-hover:underline decoration-2 underline-offset-4">
-                          {project.title}
-                        </h4>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {project.summary}
-                        </p>
+                  <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
+                    {/* Title & Summary */}
+                    <div className="lg:col-span-4">
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300">
+                          <project.icon size={18} strokeWidth={1.5} />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">{project.title}</h4>
+                          <p className="text-sm text-muted-foreground">{project.summary}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Middle Column - Problem/Solution/Result */}
-                  <div className="lg:col-span-5 space-y-4">
-                    <div className="grid grid-cols-3 gap-4 text-sm">
+                    {/* Problem → Solution → Result */}
+                    <div className="lg:col-span-6 grid sm:grid-cols-3 gap-6 text-sm">
                       <div>
-                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
                           Problem
                         </span>
-                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                        <p className="text-muted-foreground leading-relaxed">
                           {project.problem}
                         </p>
                       </div>
                       <div>
-                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
                           Solution
                         </span>
-                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                        <p className="text-muted-foreground leading-relaxed">
                           {project.solution}
                         </p>
                       </div>
                       <div>
-                        <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">
+                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
                           Result
                         </span>
-                        <p className="mt-1 text-muted-foreground line-clamp-2 lg:line-clamp-none">
+                        <p className="text-muted-foreground leading-relaxed">
                           {project.result}
                         </p>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Right Column - Tech */}
-                  <div className="lg:col-span-3">
-                    <div className="flex flex-wrap gap-2">
+                    {/* Tech Stack */}
+                    <div className="lg:col-span-2 flex flex-wrap lg:flex-col gap-2 lg:gap-1 lg:text-right">
                       {project.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 bg-muted text-xs font-mono rounded"
+                          className="text-xs font-mono text-muted-foreground/70"
                         >
                           {tech}
                         </span>
@@ -249,7 +255,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
         </div>

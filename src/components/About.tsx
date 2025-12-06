@@ -1,107 +1,85 @@
-import { Code2, Shield, Zap } from 'lucide-react';
-
-const highlights = [
-  {
-    icon: Shield,
-    title: 'Secure Systems',
-    description: 'Building robust payment infrastructure with enterprise-grade security.',
-  },
-  {
-    icon: Zap,
-    title: 'Performance',
-    description: 'Optimizing transaction flows for speed and reliability.',
-  },
-  {
-    icon: Code2,
-    title: 'Clean Code',
-    description: 'Writing maintainable, scalable solutions that last.',
-  },
-];
+import ScrollReveal from './ScrollReveal';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-32 border-t border-border">
+    <section id="about" className="py-28 md:py-36">
       <div className="section-container">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left Column - Main Content */}
-          <div>
-            <span className="font-mono text-sm text-muted-foreground tracking-wider uppercase">
+        <div className="max-w-4xl">
+          <ScrollReveal>
+            <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">
               About
             </span>
-            <h2 className="text-headline mt-4 mb-6">
-              Crafting seamless payment experiences
+          </ScrollReveal>
+          
+          <ScrollReveal delay={100}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mt-6 mb-10 leading-tight">
+              Crafting seamless<br className="hidden sm:block" /> payment experiences
             </h2>
-            
-            {/* Mobile-friendly short version */}
-            <p className="text-body text-muted-foreground mb-6 lg:hidden">
-              I'm Panha Chom, a Software Developer focused on building secure, 
-              scalable payment solutions. I bridge the gap between complex banking 
-              APIs and user-friendly applications.
-            </p>
-
-            {/* Full version for desktop */}
-            <div className="hidden lg:block space-y-4 text-body text-muted-foreground">
-              <p>
-                I'm Panha Chom, a Software Developer with deep expertise in 
-                payment integration and fintech solutions. My work focuses on 
-                bridging the gap between complex banking APIs and seamless user 
-                experiences.
-              </p>
-              <p>
-                Over the years, I've integrated multiple payment gateways including 
-                MPGS, ABA Payway, WingPay, and custom bank APIs. I specialize in 
-                building secure backend systems that handle thousands of transactions 
-                while maintaining 99.9% uptime.
-              </p>
-              <p>
-                Beyond payments, I develop mobile and web applications using Flutter 
-                and Ruby on Rails, with a focus on mini app integrations for banks 
-                and innovative features like Google Wallet passes.
-              </p>
+          </ScrollReveal>
+          
+          {/* Bio - Clean paragraphs without cards */}
+          <div className="grid md:grid-cols-12 gap-12 md:gap-16">
+            <div className="md:col-span-7">
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  I'm Panha Chom, a Software Developer with deep expertise in 
+                  payment integration and fintech solutions. My work focuses on 
+                  bridging the gap between complex banking APIs and seamless user 
+                  experiences.
+                </p>
+              </ScrollReveal>
+              
+              <ScrollReveal delay={300}>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  Over the years, I've integrated multiple payment gateways including 
+                  MPGS, ABA Payway, WingPay, and custom bank APIs. I specialize in 
+                  building secure backend systems that handle thousands of transactions 
+                  while maintaining 99.9% uptime.
+                </p>
+              </ScrollReveal>
+              
+              <ScrollReveal delay={400}>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Beyond payments, I develop mobile and web applications using Flutter 
+                  and Ruby on Rails, with a focus on mini app integrations for banks 
+                  and innovative features like Google Wallet passes.
+                </p>
+              </ScrollReveal>
             </div>
 
-            {/* Terminal-style signature */}
-            <div className="mt-8 p-4 bg-foreground/5 border border-border rounded-lg font-mono text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <span className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-                <span className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-                <span className="w-3 h-3 rounded-full bg-muted-foreground/30" />
-              </div>
-              <code className="text-foreground">
-                <span className="text-muted-foreground">const</span> developer = {'{'}
-                <br />
-                <span className="ml-4">name: </span>
-                <span className="text-muted-foreground">'Panha Chom'</span>,
-                <br />
-                <span className="ml-4">role: </span>
-                <span className="text-muted-foreground">'Software Developer'</span>,
-                <br />
-                <span className="ml-4">focus: </span>
-                <span className="text-muted-foreground">'Fintech & Payments'</span>
-                <br />
-                {'}'};
-              </code>
-            </div>
-          </div>
-
-          {/* Right Column - Highlights */}
-          <div className="space-y-6">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="group p-6 border border-border rounded-2xl hover:border-muted-foreground/50 transition-colors"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-foreground/5 rounded-xl group-hover:bg-foreground/10 transition-colors">
-                    <item.icon size={24} strokeWidth={1.5} />
+            {/* Key points - Simple list */}
+            <div className="md:col-span-5">
+              <ScrollReveal delay={300} direction="right">
+                <div className="space-y-6 md:pl-8 md:border-l border-border">
+                  <div className="group">
+                    <h3 className="font-semibold mb-2 group-hover:text-muted-foreground transition-colors">
+                      Secure Systems
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Building robust payment infrastructure with enterprise-grade security.
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <div className="h-px bg-border/50" />
+                  <div className="group">
+                    <h3 className="font-semibold mb-2 group-hover:text-muted-foreground transition-colors">
+                      Performance First
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Optimizing transaction flows for speed and reliability.
+                    </p>
+                  </div>
+                  <div className="h-px bg-border/50" />
+                  <div className="group">
+                    <h3 className="font-semibold mb-2 group-hover:text-muted-foreground transition-colors">
+                      Clean Code
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Writing maintainable, scalable solutions that last.
+                    </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </div>
