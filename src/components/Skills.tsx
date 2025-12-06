@@ -1,3 +1,5 @@
+import ScrollReveal from './ScrollReveal';
+
 const skillCategories = [
   {
     title: 'Payment & Fintech',
@@ -15,67 +17,56 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 md:py-32 bg-muted/30">
+    <section id="skills" className="py-28 md:py-36">
       <div className="section-container">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-sm text-muted-foreground tracking-wider uppercase">
-            Expertise
-          </span>
-          <h2 className="text-headline mt-4">
-            Technical skills
-          </h2>
-          <p className="text-body text-muted-foreground mt-4 max-w-2xl mx-auto">
-            A comprehensive toolkit for building secure, scalable payment solutions 
-            and modern applications.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-12 gap-16">
+          {/* Left - Header */}
+          <div className="lg:col-span-4">
+            <ScrollReveal>
+              <span className="font-mono text-xs text-muted-foreground tracking-widest uppercase">
+                Expertise
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4 mb-6">
+                Technical Skills
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                A comprehensive toolkit for building secure, scalable payment solutions 
+                and modern applications.
+              </p>
+            </ScrollReveal>
+          </div>
 
-        {/* Skills Grid - Mobile: Single column, Desktop: 3 column grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-          {skillCategories.map((category, index) => (
-            <div
-              key={category.title}
-              className="group p-6 lg:p-8 bg-background border border-border rounded-2xl hover:shadow-card-hover transition-all duration-300"
-            >
-              {/* Category Number & Title */}
-              <div className="flex items-center gap-4 mb-6">
-                <span className="font-mono text-xs text-muted-foreground">
-                  0{index + 1}
-                </span>
-                <h3 className="text-title">{category.title}</h3>
-              </div>
+          {/* Right - Skills Grid */}
+          <div className="lg:col-span-8">
+            <div className="space-y-12">
+              {skillCategories.map((category, index) => (
+                <ScrollReveal key={category.title} delay={index * 100} direction="right">
+                  <div className="group">
+                    {/* Category Header */}
+                    <div className="flex items-center gap-4 mb-5">
+                      <span className="font-mono text-xs text-muted-foreground">
+                        0{index + 1}
+                      </span>
+                      <h3 className="text-lg font-semibold">{category.title}</h3>
+                      <div className="flex-1 h-px bg-border/50 group-hover:bg-border transition-colors" />
+                    </div>
 
-              {/* Skills Tags */}
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1.5 bg-muted text-sm font-medium rounded-full border border-transparent hover:border-border transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+                    {/* Skills - Inline tags */}
+                    <div className="flex flex-wrap gap-3 pl-8">
+                      {category.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skill}
+                          className="px-4 py-2 text-sm bg-muted/50 hover:bg-muted rounded-full transition-colors duration-200 cursor-default"
+                          style={{ animationDelay: `${skillIndex * 50}ms` }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
-          ))}
-        </div>
-
-        {/* Bottom Marquee - Tech Stack */}
-        <div className="mt-16 overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap">
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex items-center gap-8 mx-8">
-                {['Flutter', 'Ruby on Rails', 'PostgreSQL', 'REST APIs', 'Payment Gateways', 'LitElement'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-2xl md:text-3xl lg:text-4xl font-bold text-muted-foreground/20 tracking-tight"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            ))}
           </div>
         </div>
       </div>
