@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/panha-noir-nexus/',
+  base: mode === 'production' ? '/panha-noir-nexus/' : '/',
   server: {
     host: "::",
     port: 8080,
