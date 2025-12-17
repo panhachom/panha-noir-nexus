@@ -6,34 +6,35 @@ const education = [
     id: 1,
     icon: GraduationCap,
     degree: 'Bachelor of Computer Science',
-    institution: 'Royal University of Phnom Penh',
-    period: '2018 - 2022',
+    institution: 'Cambodia Academy of Digital Technology,CADT',
+    period: '2021 - 2025',
     description: 'Focused on software engineering, algorithms, and database systems.',
   },
   {
     id: 2,
     icon: School,
     degree: 'High School Diploma',
-    institution: 'Hun Sen Kampong Cham High School',
-    period: '2015 - 2018',
-    description: 'Science track with focus on mathematics and physics.',
+    institution: 'Chea Sim Samaki High School',
+    period: '2017 - 2020',
+    description: 'Science track',
   },
   {
     id: 3,
-    icon: BookOpen,
-    degree: 'Secondary Education',
-    institution: 'Kampong Cham Secondary School',
-    period: '2012 - 2015',
-    description: 'Foundation in sciences and mathematics with academic excellence.',
+    icon: School,
+    degree: 'General English Program (GEP)',
+    institution: 'Australian Centre for Education (ACE)',
+    period: '2016 - 2019',
+    description: 'Science track',
   },
   {
     id: 4,
-    icon: Award,
-    degree: 'Primary Education',
-    institution: 'Kampong Cham Primary School',
-    period: '2006 - 2012',
-    description: 'Early education with strong fundamentals in core subjects.',
+    icon: BookOpen,
+    degree: 'Secondary Education',
+    institution: 'Obekaam High Secondary School',
+    period: '2015 - 2017',
+    description: 'Foundation in sciences and mathematics with academic excellence.',
   },
+
 ];
 
 const Education = () => {
@@ -51,7 +52,7 @@ const Education = () => {
               </h2>
             </div>
             <div className="hidden md:block text-sm text-muted-foreground">
-              2006 — 2022
+              2015 — 2025
             </div>
           </div>
         </ScrollReveal>

@@ -27,15 +27,29 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="animate-fade-up opacity-0" style={{ animationDelay: '200ms' }}>
-            <span className="block text-display font-bold tracking-tight mb-2">
+          <h1
+            className="animate-fade-up opacity-0"
+            style={{ animationDelay: '200ms' }}
+          >
+            <span className="
+              block font-bold tracking-tight mb-2
+              text-3xl sm:text-4xl md:text-5xl lg:text-display
+            ">
               Building the
             </span>
-            <span className="block text-display font-bold tracking-tight mb-2">
-              infrastructure of
+
+            <span className="
+              block font-bold tracking-tight mb-2
+              text-3xl sm:text-4xl md:text-5xl lg:text-display
+            ">
+              Infrastructure of Modern
             </span>
-            <span className="block text-display font-bold tracking-tight text-muted-foreground">
-              digital payments
+
+            <span className="
+              block font-bold tracking-tight text-muted-foreground
+              text-2xl sm:text-3xl md:text-4xl lg:text-display
+            ">
+              Digital Experiences
             </span>
           </h1>
 
@@ -50,7 +64,7 @@ const Hero = () => {
           </div>
 
           {/* Stats - Minimal horizontal layout */}
-          <div className="animate-fade-up opacity-0 mt-16" style={{ animationDelay: '500ms' }}>
+          {/* <div className="animate-fade-up opacity-0 mt-16" style={{ animationDelay: '500ms' }}>
             <div className="flex flex-wrap items-center gap-12 md:gap-20">
               <div className="group">
                 <div className="font-mono text-4xl md:text-5xl font-bold tracking-tight">
@@ -79,7 +93,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* CTA Buttons */}
           <div className="animate-fade-up opacity-0 mt-14 flex flex-wrap gap-4" style={{ animationDelay: '600ms' }}>

@@ -1,11 +1,16 @@
-import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Mail, Github, Send, Instagram, Facebook , ArrowUpRight} from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Mail, label: 'Email', href: 'mailto:hello@panhachom.dev' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/panhachom/' },
+  { icon: Mail, label: 'Email', href: 'mailto:panhachom@gmail.com' },
+  { icon: Github, label: 'GitHub', href: 'https://github.com/panhachom' },
+
+  { icon: Send, label: 'Telegram', href: 'https://t.me/panhachom' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/chompanha/?hl=en' },
+  { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/panha.chom.7' },
 ];
+
 
 const Contact = () => {
   return (
@@ -33,7 +38,7 @@ const Contact = () => {
 
           <ScrollReveal delay={300}>
             <a
-              href="mailto:hello@panhachom.dev"
+              href="mailto:panhachom@gmail.com"
               className="group inline-flex items-center gap-3 px-8 py-4 bg-foreground text-background text-lg font-medium rounded-full hover:opacity-90 transition-all duration-300"
             >
               Get in Touch
@@ -42,11 +47,13 @@ const Contact = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={400}>
-            <div className="flex justify-center gap-4 mt-14">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 mt-14">
               {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3.5 border border-border rounded-full hover:bg-muted hover:border-muted-foreground/30 transition-all duration-300"
                   aria-label={link.label}
                 >

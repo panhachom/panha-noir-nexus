@@ -8,7 +8,8 @@ const involvedProjects = [
     name: 'BookMeBus',
     description: 'Cambodia\'s leading bus ticketing platform connecting travelers with major bus operators nationwide.',
     role: 'Full Stack Developer',
-    technologies: ['Ruby on Rails', 'Flutter', 'PostgreSQL'],
+    technologies: ['Ruby on Rails', 'MYSQL', 'Sidekiq', 'RSpec', 'Redis', 'Devise', 'JWT' ],
+    link: 'https://bookmebus.com',
   },
   {
     id: 2,
@@ -16,95 +17,121 @@ const involvedProjects = [
     name: 'BookMe+',
     description: 'Multi-service booking platform for events, attractions, and experiences across Cambodia.',
     role: 'Full Stack Developer',
-    technologies: ['Ruby on Rails', 'Flutter', 'Sidekiq'],
+    technologies: ['Ruby on Rails', 'PostgreSQL', 'APIs', 'RSpec', 'Redis', 'Flutter', 'Dart','Material Design'],
+    link: 'https://www.bookme.plus',
   },
   {
     id: 3,
     icon: Calendar,
     name: 'EventOrganizer Portal',
     description: 'Admin dashboard for event organizers to manage tickets, attendees, and analytics.',
-    role: 'Frontend Developer',
-    technologies: ['LitElement', 'REST APIs', 'Web Components'],
+    role: 'Fullstack Developer',
+    technologies: [
+      'Ruby on Rails',
+      'Bootstrap',
+      'LitElement',
+      'Stimulus JS',
+      'Tailwind CSS',
+      'DaisyUI'
+    ],
+    link: 'https://business.bookme.plus/sign_in',
   },
+
   {
     id: 4,
+    icon: Calendar,
+    name: 'VTENH',
+    description: 'Implemented flash sale and wishlist features to improve user engagement and conversion.',
+    role: 'Frontend Developer',
+    technologies: [
+      'Ruby on Rails',
+      'Bootstrap',
+      'JQuery',
+    
+    ],
+    link: 'https://www.vtenh.com',
+  },
+  {
+    id: 5,
     icon: Shield,
     name: 'GreenGuard App',
-    description: 'Environmental monitoring and reporting mobile application for sustainability tracking.',
-    role: 'Mobile Developer',
-    technologies: ['Flutter', 'Dart', 'REST APIs'],
+    description: 'Mobile application for detecting diseases on rice leaves with Machine Learning.',
+    role: 'Full Stack Developer',
+    technologies: ['Flutter', 'Dart', 'Python', 'Laravel', 'Flask API', 'PyTorch'],
+    link: 'https://drive.google.com/file/d/1g0WK_hm5qO78-CqDeR12FKwg3uSMzMNj/view',
   },
+
 ];
 
 const featuredWork = [
   {
     id: 1,
     icon: CreditCard,
-    title: 'ABA Pre-authorization',
-    summary: 'Hold and capture payment flow for bookings.',
-    problem: 'Needed to reserve funds without immediate capture for flexible booking cancellations.',
-    solution: 'Implemented pre-auth with ABA API, allowing holds up to 7 days before capture or void.',
-    result: 'Reduced chargebacks by 35% and improved customer refund experience.',
+    title: 'ABA Bank Pre-authorization',
+    summary: 'Implemented a hold-and-capture payment flow for advance bookings.',
+    problem: 'The platform needed a way to reserve funds on a customer\'s card without immediate capture to accommodate flexible cancellation policies.',
+    solution: 'Leveraged the ABA Bank API to implement a pre-authorization mechanism. This allowed for placing a temporary hold on funds for up to seven days, with the flexibility to either capture the payment or void the transaction.',
+    result: 'Significantly reduced chargeback incidents and streamlined the refund process, improving customer satisfaction.',
     technologies: ['ABA API', 'Ruby on Rails', 'PostgreSQL'],
   },
   {
     id: 2,
     icon: CreditCard,
-    title: 'Vattanac Bank Gateway',
-    summary: 'Secure payment processing with Vattanac Bank.',
-    problem: 'Required integration with local bank for card payments and iPay.',
-    solution: 'Built custom gateway connector with 3DS authentication support.',
-    result: 'Enabled local card payments with 99.9% success rate.',
+    title: 'Vattanac Bank Payment Gateway',
+    summary: 'Engineered a secure payment gateway for Vattanac Bank.',
+    problem: 'The business required a direct integration with a local bank to process card payments and support the bank\'s proprietary "iPay" system.',
+    solution: 'Developed a custom gateway connector that integrated Vattanac Bank\'s API, complete with 3D Secure authentication for enhanced security.',
+    result: 'Successfully enabled local card payments, achieving a near-perfect transaction success rate and expanding payment options for customers.',
     technologies: ['Vattanac API', 'Ruby on Rails', '3DS'],
   },
   {
     id: 3,
     icon: CreditCard,
-    title: 'TrueMoney Gateway',
-    summary: 'E-wallet payment option for TrueMoney users.',
-    problem: 'Users wanted to pay using TrueMoney wallet balance.',
-    solution: 'Integrated TrueMoney payment API with QR and deeplink flows.',
-    result: 'Added new payment option used by 15% of customers.',
+    title: 'TrueMoney E-wallet Gateway',
+    summary: 'Integrated the TrueMoney e-wallet to provide a new payment method.',
+    problem: 'A growing segment of users preferred to pay using their TrueMoney wallet balance instead of traditional cards.',
+    solution: 'Integrated the TrueMoney payment API, enabling seamless transactions through both QR code generation and mobile deeplinking.',
+    result: 'The new payment option was quickly adopted by a significant portion of customers, diversifying payment methods and improving conversion rates.',
     technologies: ['TrueMoney API', 'Ruby on Rails', 'QR Generation'],
   },
   {
     id: 4,
     icon: Smartphone,
-    title: 'Vattanac Bank Mini App',
-    summary: 'Booking services inside Vattanac mobile banking app.',
-    problem: 'Bank wanted to offer lifestyle services within their super app.',
-    solution: 'Built Flutter mini app with seamless bank authentication and payment.',
-    result: 'Launched to 500K+ bank users with native-like experience.',
-    technologies: ['Flutter', 'Mini App SDK', 'Bank APIs'],
+    title: 'Vattanac Bank App: BookMe+ Integration',
+    summary: 'Integrated the BookMe+ platform into the Vattanac mobile banking app.',
+    problem: 'The bank aimed to transform its application into a "super app" by offering integrated lifestyle and travel services.',
+    solution: 'Delivered the BookMe+ booking portal as a web-based mini-app, loaded via an initial URL, which provided seamless authentication and payment processing through the bank\'s internal APIs.',
+    result: 'The service was successfully rolled out to a vast user base, offering a native-like experience within their trusted banking app.',
+    technologies: ['Flutter', 'Webview', 'Bank APIs'],
   },
   {
     id: 5,
     icon: Smartphone,
-    title: 'TrueMoney Mini App',
-    summary: 'Ticket booking within TrueMoney wallet app.',
-    problem: 'TrueMoney wanted to expand services beyond payments.',
-    solution: 'Developed mini app with wallet-integrated checkout flow.',
-    result: 'Enabled 1-tap bookings for TrueMoney users.',
-    technologies: ['Flutter', 'TrueMoney SDK', 'REST APIs'],
+    title: 'TrueMoney Wallet: BookMeBus Integration',
+    summary: 'Embedded the BookMeBus ticket booking platform inside the TrueMoney wallet app.',
+    problem: 'TrueMoney sought to expand its service offerings beyond payments to increase user engagement and retention.',
+    solution: 'Developed a mini-app that loaded the BookMeBus web-based booking experience via a URL, featuring a deeply integrated checkout flow that utilized the user\'s wallet balance.',
+    result: 'Enabled a frictionless, one-tap booking process for all TrueMoney users, simplifying the customer journey.',
+    technologies: ['Flutter', 'Webview', 'REST APIs'],
   },
   {
     id: 6,
     icon: Smartphone,
-    title: 'SmartNas Mini App',
-    summary: 'Travel booking services in SmartNas super app.',
-    problem: 'SmartNas needed travel vertical for their platform.',
-    solution: 'Created white-label booking experience with custom branding.',
-    result: 'Expanded booking reach to new user segment.',
-    technologies: ['Flutter', 'Mini App SDK', 'REST APIs'],
+    title: 'SmartNas App: BookMeBus Integration',
+    summary: 'Introduced BookMeBus travel booking services to the SmartNas super app.',
+    problem: 'The SmartNas platform needed to add a travel vertical to broaden its ecosystem and provide more value to users.',
+    solution: 'Delivered a white-labeled BookMeBus web-based booking experience with custom branding, which was integrated into the super app via a URL.',
+    result: 'Expanded the reach of the booking platform to a new and diverse user segment, driving growth and brand visibility.',
+    technologies: ['Flutter', 'Webview', 'REST APIs'],
   },
   {
     id: 7,
     icon: Wallet,
     title: 'Google Wallet Integration',
-    summary: 'Digital passes delivered directly to users\' wallets.',
-    problem: 'Users had to manage physical tickets and paper confirmations.',
-    solution: 'Integrated Google Wallet API to generate and deliver passes automatically.',
-    result: 'Streamlined user experience with instant digital ticket access.',
+    summary: 'Automated the delivery of digital passes to Google Wallet.',
+    problem: 'Customers were burdened with managing physical tickets or paper confirmations, leading to a disjointed user experience.',
+    solution: 'Integrated the Google Wallet API to automatically generate and deliver secure digital passes upon booking confirmation.',
+    result: 'Streamlined the post-booking experience by providing users with instant and convenient access to their tickets on their mobile devices.',
     technologies: ['Google Wallet API', 'Ruby on Rails', 'JWT'],
   },
 ];
@@ -142,7 +169,12 @@ const Projects = () => {
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             {involvedProjects.map((project, index) => (
               <ScrollReveal key={project.id} delay={index * 100}>
-                <div className="group py-6 border-b border-border/50 hover:border-foreground/20 transition-colors duration-300">
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block group py-6 border-b border-border/50 hover:border-foreground/20 transition-colors duration-300 cursor-pointer"
+                >
                   <div className="flex items-start gap-4">
                     <div className="p-2.5 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300 mt-0.5">
                       <project.icon size={20} strokeWidth={1.5} />
@@ -162,19 +194,21 @@ const Projects = () => {
                       <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {project.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="text-xs font-mono text-muted-foreground/80"
-                          >
-                            {tech}
-                          </span>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-4">
+                        {project.technologies.map((tech, idx) => (
+                          <div key={tech} className="flex items-center gap-3">
+                            <span className="px-2.5 py-1 text-xs font-mono bg-foreground/5 text-foreground/80 rounded border border-border/50 hover:border-foreground/30 hover:bg-foreground/10 transition-colors duration-200">
+                              {tech}
+                            </span>
+                            {idx < project.technologies.length - 1 && (
+                              <span className="text-muted-foreground/30">•</span>
+                            )}
+                          </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               </ScrollReveal>
             ))}
           </div>
@@ -185,7 +219,7 @@ const Projects = () => {
           <ScrollReveal>
             <div className="flex items-center gap-4 mb-10">
               <span className="font-mono text-xs text-muted-foreground">02</span>
-              <h3 className="text-xl font-semibold">Featured Work</h3>
+              <h3 className="text-xl font-semibold">My Work</h3>
               <div className="flex-1 h-px bg-border" />
             </div>
           </ScrollReveal>
@@ -243,14 +277,16 @@ const Projects = () => {
                     </div>
 
                     {/* Tech Stack */}
-                    <div className="lg:col-span-2 flex flex-wrap lg:flex-col gap-2 lg:gap-1 lg:text-right">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs font-mono text-muted-foreground/70"
-                        >
-                          {tech}
-                        </span>
+                    <div className="lg:col-span-2 flex flex-wrap lg:flex-col gap-2">
+                      {project.technologies.map((tech, idx) => (
+                        <div key={tech} className="flex items-center gap-2 lg:justify-end">
+                          <span className="px-2.5 py-1 text-xs font-mono bg-foreground/5 text-foreground/80 rounded border border-border/50 hover:border-foreground/30 hover:bg-foreground/10 transition-colors duration-200">
+                            {tech}
+                          </span>
+                          {idx < project.technologies.length - 1 && (
+                            <span className="text-muted-foreground/20 lg:hidden">|</span>
+                          )}
+                        </div>
                       ))}
                     </div>
                   </div>

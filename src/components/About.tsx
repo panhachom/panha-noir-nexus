@@ -31,10 +31,9 @@ const About = () => {
               
               <ScrollReveal delay={300}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Over the years, I've integrated multiple payment gateways including 
-                  MPGS, ABA Payway, WingPay, and custom bank APIs. I specialize in 
-                  building secure backend systems that handle thousands of transactions 
-                  while maintaining 99.9% uptime.
+                 Over the years, I've integrated multiple payment gateways including ABA Payway, Vattanac Bank, True Money, SMART, 
+                 and custom bank APIs. I specialize in building secure backend systems that handle thousands of transactions 
+                 while ensuring high reliability and continuous availability.
                 </p>
               </ScrollReveal>
               
@@ -75,6 +74,16 @@ const About = () => {
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       Writing maintainable, scalable solutions that last.
+                    </p>
+                  </div>
+
+                  <div className="h-px bg-border/50" />
+                  <div className="group">
+                    <h3 className="font-semibold mb-2 group-hover:text-muted-foreground transition-colors">
+                      User-Centric Design
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Delivering seamless, intuitive experiences that prioritize real-world usability.
                     </p>
                   </div>
                 </div>
