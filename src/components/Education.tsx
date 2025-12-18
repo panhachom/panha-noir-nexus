@@ -52,7 +52,7 @@ const Education = () => {
               </h2>
             </div>
             <div className="hidden md:block text-sm text-muted-foreground">
-              2015 — 2025
+              2015 — 2024
             </div>
           </div>
         </ScrollReveal>
