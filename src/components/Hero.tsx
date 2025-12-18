@@ -57,8 +57,8 @@ const Hero = () => {
           <div className="animate-fade-up opacity-0 mt-10" style={{ animationDelay: '400ms' }}>
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
               Software Developer specializing in{' '}
-              <span className="text-foreground">payment gateway integrations</span>,{' '}
-              <span className="text-foreground">secure backend systems</span>, and{' '}
+              <span className="text-foreground">secure backend systems</span>,{' '}
+              <span className="text-foreground">payment gateway integrations</span>, and{' '}
               <span className="text-foreground">mobile-first solutions</span>.
             </p>
           </div>

@@ -72,7 +72,7 @@ const featuredWork = [
     problem: 'The platform needed a way to reserve funds on a customer\'s card without immediate capture to accommodate flexible cancellation policies.',
     solution: 'Leveraged the ABA Bank API to implement a pre-authorization mechanism. This allowed for placing a temporary hold on funds for up to seven days, with the flexibility to either capture the payment or void the transaction.',
     result: 'Significantly reduced chargeback incidents and streamlined the refund process, improving customer satisfaction.',
-    technologies: ['ABA API', 'Ruby on Rails', 'PostgreSQL'],
+    technologies: ['ABA API', 'Ruby on Rails', 'PostgreSQL' , 'Flutter'],
   },
   {
     id: 2,
@@ -82,17 +82,17 @@ const featuredWork = [
     problem: 'The business required a direct integration with a local bank to process card payments and support the bank\'s proprietary "iPay" system.',
     solution: 'Developed a custom gateway connector that integrated Vattanac Bank\'s API, complete with 3D Secure authentication for enhanced security.',
     result: 'Successfully enabled local card payments, achieving a near-perfect transaction success rate and expanding payment options for customers.',
-    technologies: ['Vattanac API', 'Ruby on Rails', '3DS'],
+    technologies: ['Vattanac API', 'Ruby on Rails', 'PostgreSQL', 'Flutter'],
   },
   {
     id: 3,
     icon: CreditCard,
-    title: 'TrueMoney E-wallet Gateway',
-    summary: 'Integrated the TrueMoney e-wallet to provide a new payment method.',
-    problem: 'A growing segment of users preferred to pay using their TrueMoney wallet balance instead of traditional cards.',
-    solution: 'Integrated the TrueMoney payment API, enabling seamless transactions through both QR code generation and mobile deeplinking.',
+    title: ' E-wallet Gateway',
+    summary: 'Integrated the  e-wallet to provide a new payment method.',
+    problem: 'A growing segment of users preferred to pay using their  wallet balance instead of traditional cards.',
+    solution: 'Integrated the  payment API, enabling seamless transactions through both QR code generation and mobile deeplinking.',
     result: 'The new payment option was quickly adopted by a significant portion of customers, diversifying payment methods and improving conversion rates.',
-    technologies: ['TrueMoney API', 'Ruby on Rails', 'QR Generation'],
+    technologies: [' API', 'Ruby on Rails', 'PostgreSQL' , 'Flutter'],
   },
   {
     id: 4,
@@ -102,16 +102,16 @@ const featuredWork = [
     problem: 'The bank aimed to transform its application into a "super app" by offering integrated lifestyle and travel services.',
     solution: 'Delivered the BookMe+ booking portal as a web-based mini-app, loaded via an initial URL, which provided seamless authentication and payment processing through the bank\'s internal APIs.',
     result: 'The service was successfully rolled out to a vast user base, offering a native-like experience within their trusted banking app.',
-    technologies: ['Flutter', 'Webview', 'Bank APIs'],
+    technologies: ['Flutter','Ruby on Rails', 'Webview', 'Bank APIs'],
   },
   {
     id: 5,
     icon: Smartphone,
-    title: 'TrueMoney Wallet: BookMeBus Integration',
-    summary: 'Embedded the BookMeBus ticket booking platform inside the TrueMoney wallet app.',
-    problem: 'TrueMoney sought to expand its service offerings beyond payments to increase user engagement and retention.',
+    title: 'E-wallet: BookMeBus Integration',
+    summary: 'Embedded the BookMeBus ticket booking platform inside the E-wallet app.',
+    problem: ' sought to expand its service offerings beyond payments to increase user engagement and retention.',
     solution: 'Developed a mini-app that loaded the BookMeBus web-based booking experience via a URL, featuring a deeply integrated checkout flow that utilized the user\'s wallet balance.',
-    result: 'Enabled a frictionless, one-tap booking process for all TrueMoney users, simplifying the customer journey.',
+    result: 'Enabled a frictionless, one-tap booking process for all E-wallet users, simplifying the customer journey.',
     technologies: ['Flutter', 'Webview', 'REST APIs'],
   },
   {
@@ -122,7 +122,7 @@ const featuredWork = [
     problem: 'The SmartNas platform needed to add a travel vertical to broaden its ecosystem and provide more value to users.',
     solution: 'Delivered a white-labeled BookMeBus web-based booking experience with custom branding, which was integrated into the super app via a URL.',
     result: 'Expanded the reach of the booking platform to a new and diverse user segment, driving growth and brand visibility.',
-    technologies: ['Flutter', 'Webview', 'REST APIs'],
+    technologies: ['Flutter', 'Ruby on Rails', 'Webview', 'REST APIs'],
   },
   {
     id: 7,
@@ -133,6 +133,16 @@ const featuredWork = [
     solution: 'Integrated the Google Wallet API to automatically generate and deliver secure digital passes upon booking confirmation.',
     result: 'Streamlined the post-booking experience by providing users with instant and convenient access to their tickets on their mobile devices.',
     technologies: ['Google Wallet API', 'Ruby on Rails', 'JWT'],
+  },
+  {
+    id: 8,
+    icon: Shield,
+    title: 'Rice Leaf Disease Detection',
+    summary: 'Built an ML pipeline to classify rice leaf diseases from images.',
+    problem: 'Farmers and agronomists needed fast, reliable diagnosis to reduce crop loss without relying on constant connectivity.',
+    solution: 'Trained a transfer-learning CNN on labeled rice leaf datasets in PyTorch, optimized the model for inference, served a FastAPI microservice, and embedded on-device predictions in a Flutter app for low-latency offline use.',
+    result: 'Reached 80% validation accuracy  enabling quick field diagnosis and structured incident reporting.',
+    technologies: ['PyTorch', 'FastAPI', 'Flutter', 'Python'],
   },
 ];
 
@@ -219,7 +229,7 @@ const Projects = () => {
           <ScrollReveal>
             <div className="flex items-center gap-4 mb-10">
               <span className="font-mono text-xs text-muted-foreground">02</span>
-              <h3 className="text-xl font-semibold">My Work</h3>
+              <h3 className="text-xl font-semibold">Work Highlights</h3>
               <div className="flex-1 h-px bg-border" />
             </div>
           </ScrollReveal>
