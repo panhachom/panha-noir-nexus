@@ -57,6 +57,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        brand: "hsl(var(--brand))",
         gray: {
           50: "hsl(var(--gray-50))",
           100: "hsl(var(--gray-100))",

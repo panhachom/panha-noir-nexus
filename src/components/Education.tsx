@@ -88,7 +88,7 @@ const Education = () => {
                       
                       {/* Icon & Title */}
                       <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                        <div className="p-2 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300">
+                        <div className="glass-icon p-2">
                           <item.icon size={18} strokeWidth={1.5} />
                         </div>
                         <h3 className="text-lg font-semibold">{item.degree}</h3>

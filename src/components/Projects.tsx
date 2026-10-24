@@ -1,5 +1,6 @@
-import { Bus, Ticket, Calendar, Shield, CreditCard, Wallet, Smartphone, ArrowRight } from 'lucide-react';
+import { Bus, Ticket, Calendar, Shield, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import WorkHighlights from './WorkHighlights';
 
 const involvedProjects = [
   {
@@ -63,89 +64,6 @@ const involvedProjects = [
 
 ];
 
-const featuredWork = [
-  {
-    id: 1,
-    icon: CreditCard,
-    title: 'ABA Bank Pre-authorization',
-    summary: 'Implemented a hold-and-capture payment flow for advance bookings.',
-    problem: 'The platform needed a way to reserve funds on a customer\'s card without immediate capture to accommodate flexible cancellation policies.',
-    solution: 'Leveraged the ABA Bank API to implement a pre-authorization mechanism. This allowed for placing a temporary hold on funds for up to seven days, with the flexibility to either capture the payment or void the transaction.',
-    result: 'Significantly reduced chargeback incidents and streamlined the refund process, improving customer satisfaction.',
-    technologies: ['ABA API', 'Ruby on Rails', 'PostgreSQL' , 'Flutter'],
-  },
-  {
-    id: 2,
-    icon: CreditCard,
-    title: 'Vattanac Bank Payment Gateway',
-    summary: 'Engineered a secure payment gateway for Vattanac Bank.',
-    problem: 'The business required a direct integration with a local bank to process card payments and support the bank\'s proprietary "iPay" system.',
-    solution: 'Developed a custom gateway connector that integrated Vattanac Bank\'s API, complete with 3D Secure authentication for enhanced security.',
-    result: 'Successfully enabled local card payments, achieving a near-perfect transaction success rate and expanding payment options for customers.',
-    technologies: ['Vattanac API', 'Ruby on Rails', 'PostgreSQL', 'Flutter'],
-  },
-  {
-    id: 3,
-    icon: CreditCard,
-    title: ' E-wallet Gateway',
-    summary: 'Integrated the  e-wallet to provide a new payment method.',
-    problem: 'A growing segment of users preferred to pay using their  wallet balance instead of traditional cards.',
-    solution: 'Integrated the  payment API, enabling seamless transactions through both QR code generation and mobile deeplinking.',
-    result: 'The new payment option was quickly adopted by a significant portion of customers, diversifying payment methods and improving conversion rates.',
-    technologies: [' API', 'Ruby on Rails', 'PostgreSQL' , 'Flutter'],
-  },
-  {
-    id: 4,
-    icon: Smartphone,
-    title: 'Vattanac Bank App: BookMe+ Integration',
-    summary: 'Integrated the BookMe+ platform into the Vattanac mobile banking app.',
-    problem: 'The bank aimed to transform its application into a "super app" by offering integrated lifestyle and travel services.',
-    solution: 'Delivered the BookMe+ booking portal as a web-based mini-app, loaded via an initial URL, which provided seamless authentication and payment processing through the bank\'s internal APIs.',
-    result: 'The service was successfully rolled out to a vast user base, offering a native-like experience within their trusted banking app.',
-    technologies: ['Flutter','Ruby on Rails', 'Webview', 'Bank APIs'],
-  },
-  {
-    id: 5,
-    icon: Smartphone,
-    title: 'E-wallet: BookMeBus Integration',
-    summary: 'Embedded the BookMeBus ticket booking platform inside the E-wallet app.',
-    problem: ' sought to expand its service offerings beyond payments to increase user engagement and retention.',
-    solution: 'Developed a mini-app that loaded the BookMeBus web-based booking experience via a URL, featuring a deeply integrated checkout flow that utilized the user\'s wallet balance.',
-    result: 'Enabled a frictionless, one-tap booking process for all E-wallet users, simplifying the customer journey.',
-    technologies: ['Flutter', 'Webview', 'REST APIs'],
-  },
-  {
-    id: 6,
-    icon: Smartphone,
-    title: 'SmartNas App: BookMeBus Integration',
-    summary: 'Introduced BookMeBus travel booking services to the SmartNas super app.',
-    problem: 'The SmartNas platform needed to add a travel vertical to broaden its ecosystem and provide more value to users.',
-    solution: 'Delivered a white-labeled BookMeBus web-based booking experience with custom branding, which was integrated into the super app via a URL.',
-    result: 'Expanded the reach of the booking platform to a new and diverse user segment, driving growth and brand visibility.',
-    technologies: ['Flutter', 'Ruby on Rails', 'Webview', 'REST APIs'],
-  },
-  {
-    id: 7,
-    icon: Wallet,
-    title: 'Google Wallet Integration',
-    summary: 'Automated the delivery of digital passes to Google Wallet.',
-    problem: 'Customers were burdened with managing physical tickets or paper confirmations, leading to a disjointed user experience.',
-    solution: 'Integrated the Google Wallet API to automatically generate and deliver secure digital passes upon booking confirmation.',
-    result: 'Streamlined the post-booking experience by providing users with instant and convenient access to their tickets on their mobile devices.',
-    technologies: ['Google Wallet API', 'Ruby on Rails', 'JWT'],
-  },
-  {
-    id: 8,
-    icon: Shield,
-    title: 'Rice Leaf Disease Detection',
-    summary: 'Built an ML pipeline to classify rice leaf diseases from images.',
-    problem: 'Farmers and agronomists needed fast, reliable diagnosis to reduce crop loss without relying on constant connectivity.',
-    solution: 'Trained a transfer-learning CNN on labeled rice leaf datasets in PyTorch, optimized the model for inference, served a FastAPI microservice, and embedded on-device predictions in a Flutter app for low-latency offline use.',
-    result: 'Reached 80% validation accuracy  enabling quick field diagnosis and structured incident reporting.',
-    technologies: ['PyTorch', 'FastAPI', 'Flutter', 'Python'],
-  },
-];
-
 const Projects = () => {
   return (
     <section id="projects" className="py-28 md:py-36 bg-muted/20">
@@ -160,16 +78,38 @@ const Projects = () => {
               Work & Experience
             </h2>
             <p className="text-muted-foreground text-lg">
-              Projects I've contributed to and key features I've built.
+              Key systems I've built, and the products they power.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Projects Involved Section */}
-        <div className="mb-24">
+        {/* Work Highlights Section */}
+        <div id="work-highlights" className="mb-24 scroll-mt-24">
           <ScrollReveal>
             <div className="flex items-center gap-4 mb-10">
               <span className="font-mono text-xs text-muted-foreground">01</span>
+              <h3 className="text-xl font-semibold">Selected Work</h3>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+          </ScrollReveal>
+
+          <div className="-mt-4 mb-10 max-w-2xl">
+            <p className="text-muted-foreground">
+              Key systems, the problems behind them, and the stack used.
+            </p>
+            <p className="font-mono text-xs text-muted-foreground mt-3">
+              Role: Full Stack Developer · BookMe+ and BookMeBus
+            </p>
+          </div>
+
+          <WorkHighlights />
+        </div>
+
+        {/* Projects Involved Section */}
+        <div>
+          <ScrollReveal>
+            <div className="flex items-center gap-4 mb-10">
+              <span className="font-mono text-xs text-muted-foreground">02</span>
               <h3 className="text-xl font-semibold">Projects Involved</h3>
               <div className="flex-1 h-px bg-border" />
             </div>
@@ -186,7 +126,7 @@ const Projects = () => {
                   className="block group py-6 border-b border-border/50 hover:border-foreground/20 transition-colors duration-300 cursor-pointer"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-2.5 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300 mt-0.5">
+                    <div className="glass-icon p-2.5 mt-0.5">
                       <project.icon size={20} strokeWidth={1.5} />
                     </div>
                     <div className="flex-1">
@@ -219,88 +159,6 @@ const Projects = () => {
                     </div>
                   </div>
                 </a>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-
-        {/* Featured Work Section */}
-        <div>
-          <ScrollReveal>
-            <div className="flex items-center gap-4 mb-10">
-              <span className="font-mono text-xs text-muted-foreground">02</span>
-              <h3 className="text-xl font-semibold">Work Highlights</h3>
-              <div className="flex-1 h-px bg-border" />
-            </div>
-          </ScrollReveal>
-          
-          {/* Clean list layout */}
-          <div className="space-y-6">
-            {featuredWork.map((project, index) => (
-              <ScrollReveal key={project.id} delay={index * 75}>
-                <div className="group relative py-8 px-6 md:px-8 bg-background border border-border/50 rounded-xl hover:border-border hover:shadow-soft transition-all duration-300">
-                  {/* Number */}
-                  <span className="absolute top-6 right-6 font-mono text-xs text-muted-foreground/50">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-
-                  <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
-                    {/* Title & Summary */}
-                    <div className="lg:col-span-4">
-                      <div className="flex items-start gap-3">
-                        <div className="p-2 bg-foreground/5 rounded-lg group-hover:bg-foreground group-hover:text-background transition-all duration-300">
-                          <project.icon size={18} strokeWidth={1.5} />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-1">{project.title}</h4>
-                          <p className="text-sm text-muted-foreground">{project.summary}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Problem → Solution → Result */}
-                    <div className="lg:col-span-6 grid sm:grid-cols-3 gap-6 text-sm">
-                      <div>
-                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
-                          Problem
-                        </span>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {project.problem}
-                        </p>
-                      </div>
-                      <div>
-                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
-                          Solution
-                        </span>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {project.solution}
-                        </p>
-                      </div>
-                      <div>
-                        <span className="block font-mono text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
-                          Result
-                        </span>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {project.result}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Tech Stack */}
-                    <div className="lg:col-span-2 flex flex-wrap lg:flex-col gap-2">
-                      {project.technologies.map((tech, idx) => (
-                        <div key={tech} className="flex items-center gap-2 lg:justify-end">
-                          <span className="px-2.5 py-1 text-xs font-mono bg-foreground/5 text-foreground/80 rounded border border-border/50 hover:border-foreground/30 hover:bg-foreground/10 transition-colors duration-200">
-                            {tech}
-                          </span>
-                          {idx < project.technologies.length - 1 && (
-                            <span className="text-muted-foreground/20 lg:hidden">|</span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
               </ScrollReveal>
             ))}
           </div>

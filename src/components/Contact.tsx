@@ -54,10 +54,10 @@ const Contact = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 border border-border rounded-full hover:bg-muted hover:border-muted-foreground/30 transition-all duration-300"
+                  className="group p-3.5 border border-border rounded-full hover:bg-muted hover:border-brand/40 hover:-translate-y-1 transition-all duration-300"
                   aria-label={link.label}
                 >
-                  <link.icon size={20} />
+                  <link.icon size={20} className="text-brand transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
                 </a>
               ))}
             </div>

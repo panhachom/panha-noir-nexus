@@ -37,6 +37,9 @@
 
     --radius: 0.5rem;
 
+    /* Single brand accent, used for icons */
+    --brand: 160 84% 36%;
+
     /* Custom Design Tokens */
     --gray-50: 0 0% 98%;
     --gray-100: 0 0% 96%;
@@ -103,6 +106,8 @@
     --input: 0 0% 15%;
     --ring: 0 0% 80%;
 
+    --brand: 158 70% 50%;
+
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 90%;
     --sidebar-primary: 0 0% 98%;
@@ -142,6 +147,52 @@
   /* Glassmorphism navigation */
   .glass-nav {
     @apply backdrop-blur-xl bg-background/80 border-b border-border/50;
+  }
+
+  /* Translucent glass tile for icons, tinted with the brand color */
+  .glass-icon {
+    @apply inline-flex items-center justify-center rounded-lg;
+    color: hsl(var(--brand));
+    background-color: hsl(var(--brand) / 0.12);
+    border: 1px solid hsl(var(--brand) / 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    transition:
+      color 300ms var(--ease-out-expo),
+      background-color 300ms var(--ease-out-expo),
+      transform 300ms var(--ease-out-expo),
+      box-shadow 300ms var(--ease-out-expo);
+  }
+
+  .glass-icon svg {
+    transition: transform 300ms var(--ease-out-expo);
+  }
+
+  .glass-icon:hover,
+  .group:hover .glass-icon {
+    color: #fff;
+    background-color: hsl(var(--brand));
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 10px 24px -8px hsl(var(--brand) / 0.55);
+  }
+
+  .glass-icon:hover svg,
+  .group:hover .glass-icon svg {
+    transform: scale(1.12) rotate(-8deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glass-icon,
+    .glass-icon svg {
+      transition: color 150ms, background-color 150ms;
+    }
+
+    .glass-icon:hover,
+    .group:hover .glass-icon,
+    .glass-icon:hover svg,
+    .group:hover .glass-icon svg {
+      transform: none;
+    }
   }
 
   /* Premium card hover effect */

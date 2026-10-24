@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"/Users/chompanha/Desktop/Development/BookMeBus\"; ls cm-market-monorepo/gems cm-market-monorepo/cm-market-app cm-market-monorepo/cm-market-server cm-market-monorepo/cm-market-client cm-market-monorepo/docs | head -80; find . -path ./node_modules -prune -o \\\\\\( -ipath '*organizer*' -o -ipath '*event*' \\\\\\) -type d -not -path '*/node_modules/*' -not -path '*/.git/*' -print 2>/dev/null | head -40)",
+      "Read(//Users/chompanha/Desktop/Development/BookMeBus/**)",
+      "Bash(grep -v -E \"\\\\.\\(log|lock|map|min\\\\.js\\)$\")",
+      "Bash(cd /Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/gems/spree_cm_commissioner; find . -ipath \"*transit*\" -type f | grep -v node_modules | sed 's|/[^/]*$||' | sort | uniq -c | sort -rn | head -50; echo; find . -ipath \"*transit*\" -type f | wc -l; ls app/models/spree_cm_commissioner | grep -iE \"trip|route|vehicle|seat|passenger|pricing|exchange|hold|reserv|transit\" | head -80)",
+      "Read(//Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/gems/spree_cm_commissioner/**)",
+      "Bash(cd /Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/gems/spree_cm_commissioner; find . -ipath \"*third_party*\" -type f | sed 's|/[^/]*$||' | sort | uniq -c | sort -rn | head -40; find . -ipath \"*third_party*\" -type f | wc -l)",
+      "Bash(cd /Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/cm-market-server && grep -rIil --exclude-dir=node_modules --exclude-dir=log --exclude-dir=coverage --exclude-dir=tmp -E \"payway|acleda|vattanac|truemoney|true_money|ipay|google_?wallet|apple_?wallet|preauth|pre_auth|smartnas|aba_\" app lib config gems docs db/migrate spec 2>/dev/null | head -80; ls gems)",
+      "Read(//Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/cm-market-server/**)",
+      "Bash(cd \"/Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo\"; find . -maxdepth 3 -name .git -not -path '*/node_modules/*'; cat docs/dashboards/organizer-views.md | head -120; ls cm-market-server/app/controllers/organizer cm-market-server/app/views/organizer cm-market-server/app/javascript/controllers/organizer cm-market-server/app/services/organizer)",
+      "Read(//Users/chompanha/Desktop/Development/BookMeBus/cm-market-monorepo/**)",
+      "Bash(python3 -I -)",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"tsc exit: $?\")",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-chompanha-Desktop-Development-Portfolio-v2-panha-noir-nexus/f28aa180-aca6-4a4e-a258-bff8740f816e/scratchpad/pup)",
+      "Bash(npm init *)",
+      "Bash(npm install *)"
+    ]
+  }
+}
